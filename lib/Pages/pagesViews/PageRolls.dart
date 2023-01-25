@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -8,19 +9,22 @@ class PageRolls extends StatefulWidget {
 }
 
 class _PageRolls extends State<PageRolls> {
-  rollD20() {
-    return Random().nextInt(20) + 1;
-  }
 
   @override
   Widget build(BuildContext context) {
+    double widthContainer = MediaQuery
+        .of(context)
+        .size
+        .width/3-10;
+    double heigthContainer = 120;
+
     Future openDialog(int result) => showDialog(
         context: context,
         builder: (context) => AlertDialog(
             backgroundColor: Colors.white,
             title: const Text('Resultado do Roll:'),
             content: Container(
-              margin: const EdgeInsets.all(20),
+              margin: const EdgeInsets.only(top: 20),
               height: 200,
               width: 160,
               child: Center(
@@ -34,12 +38,12 @@ class _PageRolls extends State<PageRolls> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              margin: const EdgeInsets.all(20),
-              height: 100,
-              width: 80,
+              margin: const EdgeInsets.only(top: 20,left: 5),
+              height: heigthContainer,
+              width: widthContainer,
               color: Colors.black38,
               child: ElevatedButton(
                 style:
@@ -51,9 +55,9 @@ class _PageRolls extends State<PageRolls> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(20),
-              height: 100,
-              width: 80,
+              margin: const EdgeInsets.only(top: 20),
+              height: heigthContainer,
+              width: widthContainer,
               color: Colors.black38,
               child: ElevatedButton(
                 style:
@@ -65,9 +69,9 @@ class _PageRolls extends State<PageRolls> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(20),
-              height: 100,
-              width: 80,
+              margin: const EdgeInsets.only(top: 20,right: 5),
+              height: heigthContainer,
+              width: widthContainer,
               color: Colors.black38,
               child: ElevatedButton(
                 style:
@@ -81,12 +85,12 @@ class _PageRolls extends State<PageRolls> {
           ],
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              margin: const EdgeInsets.all(20),
-              height: 100,
-              width: 80,
+              margin: const EdgeInsets.only(top: 20, left: 5),
+              height: heigthContainer,
+              width: widthContainer,
               color: Colors.black38,
               child: ElevatedButton(
                 style:
@@ -98,9 +102,9 @@ class _PageRolls extends State<PageRolls> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(20),
-              height: 100,
-              width: 80,
+              margin: const EdgeInsets.only(top: 20),
+              height: heigthContainer,
+              width: widthContainer,
               color: Colors.black38,
               child: ElevatedButton(
                 style:
@@ -112,9 +116,9 @@ class _PageRolls extends State<PageRolls> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(20),
-              height: 100,
-              width: 80,
+              margin: const EdgeInsets.only(top: 20,right: 5),
+              height: heigthContainer,
+              width: widthContainer,
               color: Colors.black38,
               child: ElevatedButton(
                 style:

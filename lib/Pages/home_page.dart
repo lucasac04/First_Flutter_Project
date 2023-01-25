@@ -26,9 +26,10 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Dicing'),
         centerTitle: true,
-        backgroundColor: Colors.black38,
+        backgroundColor: Colors.black54,
       ),
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
         children: [
           PageRolls(),
@@ -38,6 +39,8 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black54,
+          fixedColor: Colors.white,
           currentIndex: indexBottomNavigationBar,
           onTap: (int index) {
             setState(() {
