@@ -2,23 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:teste/Pages/pagesViews/PageRolls.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  PageController _pageController = new PageController();
+  final PageController _pageController = PageController();
   int indexBottomNavigationBar = 0;
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery
-        .of(context)
-        .size
-        .height;
-    final width = MediaQuery
-        .of(context)
-        .size
-        .width;
+    //final heightDevice = MediaQuery
+    //.of(context)
+    //.size
+    //.height;
+    //final widthDevice = MediaQuery
+    //.of(context)
+    //.size
+    //.width;
 
     return Scaffold(
       backgroundColor: Colors.white70,
@@ -28,18 +30,27 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.black54,
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            ListTile(
+              title: Text('History'),
+            )
+          ],
+        ),
+      ),
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
         children: [
-          PageRolls(),
+          const PageRolls(),
           Container(
             color: Colors.green,
           )
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black54,
+          backgroundColor: Colors.black54,
           fixedColor: Colors.white,
           currentIndex: indexBottomNavigationBar,
           onTap: (int index) {
@@ -47,7 +58,8 @@ class _HomePageState extends State<HomePage> {
               indexBottomNavigationBar = index;
             });
             _pageController.animateToPage(index,
-                duration: const Duration(milliseconds: 300), curve: Curves.ease);
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.ease);
           },
           items: const [
             BottomNavigationBarItem(
