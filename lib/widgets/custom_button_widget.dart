@@ -5,21 +5,30 @@ class CustomButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
 
-  const CustomButtonWidget({
-    Key? key,
-    required this.onPressed,
-    required this.title
-
-  }) : super(key: key);
+  const CustomButtonWidget(
+      {Key? key, required this.onPressed, required this.title})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style:
-      ElevatedButton.styleFrom(backgroundColor: Colors.black38),
-      onPressed: onPressed,
-      child:Text(title),
-    );
+        style: ButtonStyle(
+          shadowColor: MaterialStateProperty.resolveWith<Color>((states) {
+            return Colors.transparent;
+          }),
+          backgroundColor: MaterialStateProperty.resolveWith<Color>(
+            (states) {
+              return Colors.transparent;
+            },
+          ),
+        ),
+        onPressed: onPressed,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(title),
+            //Icon(Icons.) //todo fazer required e ver como importar icons ou criar icons.
+          ],
+        ));
   }
 }
-

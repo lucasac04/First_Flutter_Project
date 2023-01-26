@@ -18,7 +18,7 @@ class _PageRolls extends State<PageRolls> {
     Future openDialog(int result) => showDialog(
         context: context,
         builder: (context) => AlertDialog(
-            backgroundColor: Colors.white,
+            backgroundColor: const Color(0xFFBEBEBE),
             title: const Text('Resultado do Roll:'),
             content: Container(
               margin: const EdgeInsets.only(top: 20),

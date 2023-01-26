@@ -23,18 +23,22 @@ class _HomePageState extends State<HomePage> {
     //.width;
 
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Color(0xDE3A3A3A),
       // esqueleto
       appBar: AppBar(
         title: const Text('Dicing'),
         centerTitle: true,
-        backgroundColor: Colors.black54,
+        backgroundColor: Color(0xDE171616),
       ),
       drawer: Drawer(
+        backgroundColor: Color(0xFF282828),
         child: ListView(
           children: const [
             ListTile(
-              title: Text('History'),
+              title: Text('History',style: TextStyle(
+                color: Color(0xFFD0D0D0)
+              ),
+              ),
             )
           ],
         ),
@@ -50,8 +54,9 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.black54,
+          backgroundColor: Color(0xDE171616),
           fixedColor: Colors.white,
+          unselectedItemColor: Color(0xDE777777),
           currentIndex: indexBottomNavigationBar,
           onTap: (int index) {
             setState(() {
