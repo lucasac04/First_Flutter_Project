@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:teste/Pages/pagesViews/PageRolls.dart';
+import 'package:teste/Pages/pagesViews/page_monsters_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   final PageController _pageController = PageController();
   int indexBottomNavigationBar = 0;
   @override
@@ -21,23 +23,22 @@ class _HomePageState extends State<HomePage> {
     //.of(context)
     //.size
     //.width;
-
     return Scaffold(
-      backgroundColor: Color(0xDE3A3A3A),
+      backgroundColor: const Color(0xDE3A3A3A),
       // esqueleto
       appBar: AppBar(
         title: const Text('Dicing'),
         centerTitle: true,
-        backgroundColor: Color(0xDE171616),
+        backgroundColor: const Color(0xDE171616),
       ),
       drawer: Drawer(
-        backgroundColor: Color(0xFF282828),
+        backgroundColor: const Color(0xFF282828),
         child: ListView(
           children: const [
             ListTile(
-              title: Text('History',style: TextStyle(
-                color: Color(0xFFD0D0D0)
-              ),
+              title: Text(
+                'History',
+                style: TextStyle(color: Color(0xFFD0D0D0)),
               ),
             )
           ],
@@ -46,17 +47,15 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
-        children: [
-          const PageRolls(),
-          Container(
-            color: Colors.green,
-          )
+        children: const [
+          PageRolls(),
+          MonsterList(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color(0xDE171616),
+          backgroundColor: const Color(0xDE171616),
           fixedColor: Colors.white,
-          unselectedItemColor: Color(0xDE777777),
+          unselectedItemColor: const Color(0xDE777777),
           currentIndex: indexBottomNavigationBar,
           onTap: (int index) {
             setState(() {
