@@ -1,11 +1,16 @@
 import 'package:dio/dio.dart';
-class getterHttp {
+import 'package:teste/dio/monster_model.dart';
+class MonstersDataSource {
 
   void getHttp() async {
     try {
       var response = await Dio().get(
           'https://lucasac04.github.io/api_d-d_monsters/d&dMonsters.json');
-      print(response);
+
+      if(response.statusCode == 200){
+        final data = List.from(response.data["Monsters"] as List);
+        final monsters = data.map((e) => MonsterModel.fromJson(e)).toList();
+      }
     } catch (e) {
       print(e);
     }
