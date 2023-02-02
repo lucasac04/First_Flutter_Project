@@ -4,7 +4,7 @@ class getterHttp {
   void getHttp() async {
     try {
       var response = await Dio().get(
-          'https://gist.github.com/lucasac04/ca67385249dcd426d7975d0aa4206d35');
+          'https://lucasac04.github.io/api_d-d_monsters/d&dMonsters.json');
       print(response);
     } catch (e) {
       print(e);
