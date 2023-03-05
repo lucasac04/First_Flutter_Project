@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:teste/dio/dio_get.dart';
 import 'package:teste/widgets/custom_button_widget.dart';
 
 
@@ -71,6 +72,7 @@ class _PageRolls extends State<PageRolls> {
               color: Colors.transparent,
               child: CustomButtonWidget(
                 onPressed: () {
+                  MonstersDataSource().getHttp();
                   int result = Random().nextInt(8) + 1;
                   openDialog(result);
                 },

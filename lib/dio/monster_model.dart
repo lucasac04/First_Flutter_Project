@@ -1,24 +1,21 @@
-import 'package:teste/dio/monster_entity.dart';
+import 'package:teste/features/domain/entities/monster_entity.dart';
 
 class MonsterModel extends MonsterEntity {
   MonsterModel({
-    required int? id,
+    required String id,
     required String name,
-    required String meta,
-    required String challengeLevel,
+    required String damage,
   }) : super(
           id: id,
-          meta: meta,
           name: name,
-          challengeLevel: challengeLevel,
+          damage: damage,
         );
 
   static MonsterModel fromJson(Map<String, dynamic> map) {
     return MonsterModel(
-      id: int.tryParse(map["id"].toString()) ?? -1,
-      name: map["name"]?.toString() ?? "No title found",
-      meta: map["categoryId"]?.toString() ?? "No category found",
-      challengeLevel: map["challenge"]?.toString() ?? "No Challenge found",
+      id: map['id']?.toString() ?? "No title found",
+      name: map['name']?.toString() ?? "No title found",
+      damage: map['challenge']?.toString() ?? "No Challenge found",
     );
   }
 }
