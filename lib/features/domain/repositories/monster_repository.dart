@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:teste/dio/errors/errors.dart';
 import 'package:teste/features/domain/entities/monster_entity.dart';
+import '../errors/errors.dart';
 
 abstract class MonsterRepository {
   Future<Either<MonsterFailure, List<MonsterEntity>>> getMonsters();
