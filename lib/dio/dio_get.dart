@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:teste/dio/monster_model.dart';
+import 'package:teste/features/data/models/monster_model.dart';
 class MonstersDataSource {
 
   void getHttp() async {

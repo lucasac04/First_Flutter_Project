@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
+import 'package:teste/dio/dio_get.dart';
 import 'package:teste/features/domain/entities/monster_entity.dart';
 import 'package:teste/features/domain/errors/errors.dart';
 import 'package:teste/features/domain/repositories/monster_repository.dart';
 
 class MonstersRepositoryImpl implements IMonsterRepository{
+  late final MonstersDataSource dataSource;
   @override
   Future<Either<MonsterFailure, bool>> addMonster({required MonsterEntity monsterEntity}) {
     // TODO: implement addMonster

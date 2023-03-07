@@ -19,15 +19,19 @@ void main() {
   group('getMonstersUseCase', () {
     test('should get Monster from a get from the repository', () async {
       final entity = MonsterEntity(id: '1', name: "name", damage: "damage");
+      //Arrange
       when(() => repository.getMonsters())
           .thenAnswer((_) async => Right([entity]));
       final result = await useCase.getMonstersApiUseCase();
       expect(result.fold(id, id), isA<List<MonsterEntity>>());
     });
     test('should get ServerError from a get from the repostitory', () async {
+      // Arrange
       when(() => repository.getMonsters())
           .thenAnswer((_) async => Left(ServerError()));
+      // Act
       final result = await useCase.getMonstersApiUseCase();
+      // Assert
       expect(result.fold(id, id), isA<ServerError>());
     });
   });
