@@ -1,9 +1,9 @@
 abstract class MonsterFailure implements Exception {}
 
-class DataSourceError implements MonsterFailure {
+class ServerError implements MonsterFailure {
   final String? message;
 
-  DataSourceError({
+  ServerError({
     this.message,
   });
 }

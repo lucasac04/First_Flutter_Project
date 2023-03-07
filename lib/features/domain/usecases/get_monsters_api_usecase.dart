@@ -4,8 +4,8 @@ import 'package:teste/features/domain/repositories/monster_repository.dart';
 import '../../../core/usecases/usecases.dart';
 import '../errors/errors.dart';
 
-class GetMonstersApiUseCaseImpl implements GetApiUseCases{
-  final MonsterRepository repository;
+class GetMonstersApiUseCaseImpl implements IGetApiUseCases{
+  final IMonsterRepository repository;
 
   GetMonstersApiUseCaseImpl(this.repository);
 
