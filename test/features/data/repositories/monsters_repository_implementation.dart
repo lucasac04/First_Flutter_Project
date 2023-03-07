@@ -9,26 +9,28 @@ class MockMonstersDataSource extends Mock implements IMonsterDataSource {}
 
 void main() {
   late MonstersRepositoryImpl repository;
-  late IMonsterDataSource dataSource;
+  late IMonsterDataSource dataSourceMock;
 
   setUp(() {
-    dataSource = MockMonstersDataSource();
-    repository = MonstersRepositoryImpl();
+    dataSourceMock = MockMonstersDataSource();
+    repository = MonstersRepositoryImpl(dataSourceMock);
   });
-  late final tMonsterModel = MonsterModel(
-    id: '1',
-    name: 'name',
-    damage: 'damage',
-  );
+  late final tMonsterModel = [
+    MonsterModel(
+      id: '1',
+      name: 'name',
+      damage: 'damage',
+    )
+  ];
   group('getMonstersRepository', () {
     test('Should return MonstersModel', () async {
       // Arrange
-      when(() => dataSource.getMonstersDataSource())
-          .thenAnswer((_) async => Right([tMonsterModel]));
+      when(() => dataSourceMock.getMonstersDataSource())
+          .thenAnswer((_) async => Right(tMonsterModel));
       // Act
-      final result = await dataSource.getMonstersDataSource();
+      final result = await repository.getMonsters();
       // Assert
-      expect(result.fold(id,id), isA<List<MonsterModel>>());
+      expect(result.fold(id, id), isA<List<MonsterModel>>());
     });
   });
 }

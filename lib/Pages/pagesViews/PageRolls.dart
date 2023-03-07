@@ -72,7 +72,7 @@ class _PageRolls extends State<PageRolls> {
               color: Colors.transparent,
               child: CustomButtonWidget(
                 onPressed: () {
-                  MonstersDataSource().getHttp();
+                  //MonstersDataSource().getHttp();
                   int result = Random().nextInt(8) + 1;
                   openDialog(result);
                 },

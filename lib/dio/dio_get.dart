@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:teste/features/data/models/monster_model.dart';
-class MonstersDataSource {
+class MonstersDataSourceaaaaaa {
 
   void getHttp() async {
     try {
