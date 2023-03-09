@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste/Pages/pagesViews/PageRolls.dart';
-import 'package:teste/Pages/pagesViews/page_monsters_list.dart';
+import 'package:teste/features/presenter/Pages/pagesViews/PageRolls.dart';
+import 'package:teste/features/presenter/Pages/pagesViews/page_monsters_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

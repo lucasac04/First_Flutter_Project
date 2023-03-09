@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:teste/features/data/models/monster_model.dart';
-import 'package:teste/features/data/datasources/monsters_data_source.dart';
+import 'package:teste/features/data/datasource/monsters_data_source.dart';
 import 'package:teste/features/data/repositories/monsters_repository_implementation.dart';
 
 class MockMonstersDataSource extends Mock implements IMonsterDataSource {}
@@ -25,7 +25,7 @@ void main() {
   group('getMonstersRepository', () {
     test('Should return MonstersModel', () async {
       // Arrange
-      when(() => dataSourceMock.getMonstersDataSource())
+      when(() => dataSourceMock.getMonsters())
           .thenAnswer((_) async => Right(tMonsterModel));
       // Act
       final result = await repository.getMonsters();

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:teste/features/data/datasources/monsters_data_source.dart';
+import 'package:teste/features/data/datasource/monsters_data_source.dart';
 import 'package:teste/features/domain/entities/monster_entity.dart';
 import 'package:teste/features/domain/errors/errors.dart';
 import 'package:teste/features/domain/repositories/monster_repository.dart';
@@ -24,7 +24,7 @@ class MonstersRepositoryImpl implements IMonsterRepository {
   @override
   Future<Either<MonsterFailure, List<MonsterEntity>>> getMonsters() async {
     try {
-      final result = await dataSource.getMonstersDataSource();
+      final result = await dataSource.getMonsters();
       return result;
     } on Exception {
       return Left(ServerError());

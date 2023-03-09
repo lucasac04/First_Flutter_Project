@@ -7,3 +7,10 @@ class ServerError implements MonsterFailure {
     this.message,
   });
 }
+class DataSourceError implements MonsterFailure {
+  final String? message;
+
+  DataSourceError({
+    this.message,
+  });
+}

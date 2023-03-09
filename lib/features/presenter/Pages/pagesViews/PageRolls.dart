@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:teste/dio/dio_get.dart';
-import 'package:teste/widgets/custom_button_widget.dart';
+
+import '../../widgets/custom_button_widget.dart';
 
 
 class PageRolls extends StatefulWidget {
